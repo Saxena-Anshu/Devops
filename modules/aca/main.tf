@@ -1,12 +1,12 @@
-resource "azurerm_container_app_environment" "example" {
+resource "azurerm_container_app_environment" "aca" {
   name                = var.container_app_environment_name
   location            = var.location
   resource_group_name = var.resource_group_name
 }
 
-resource "azurerm_container_app" "example" {
+resource "azurerm_container_app" "aca" {
   name                         = var.container_app_name
-  container_app_environment_id = azurerm_container_app_environment.example.id
+  container_app_environment_id = azurerm_container_app_environment.aca.id
   resource_group_name          = var.resource_group_name
 
   revision_mode = "Single"
